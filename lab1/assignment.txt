@@ -1,0 +1,5 @@
+add two integers
+subtract two integers
+multiply two integers
+divide two integers
+tell wheather an integer is prime or not
