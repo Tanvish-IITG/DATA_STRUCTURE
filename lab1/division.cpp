@@ -285,7 +285,6 @@ num division(num a,num b)
     for(int i = 0;i<limit;i++)
     {
         q = 0;
-        display(temp_divisor);
         r = div(temp_divisor,b);
         q_final.push_back(q);
         temp_divisor = r;
