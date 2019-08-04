@@ -226,9 +226,17 @@ num subtract_num(num a,num b)
 }
 int main(void)
 {
+    int n;
+
+    cin>>n;
+
+    for(int i = 0;i<n;i++)
+
+    {
     num a = input();
     num b = input();
     num c = subtract_num(a,b);
     display(c);
+    }
     return 0;
 }
