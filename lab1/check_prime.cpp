@@ -343,12 +343,17 @@ bool is_prime(num a)
 
 int main(void)
 {
+    int n;
+    cin>>n;
+    for(int i = 0;i<n;i++)
+    {
     deque<int> a = input();
     //deque<int> b = input();
     //display(a);
     //display(b);
-    if(is_prime(a)) cout<<"input is prime";
-    else cout<<"input is not prime";
+    if(is_prime(a)) cout<<"Prime";
+    else cout<<"not Prime";
+    }
     return 0;
 
 }
