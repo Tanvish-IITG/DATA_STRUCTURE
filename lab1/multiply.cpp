@@ -87,6 +87,7 @@ deque<int> multnum(deque<int> a,deque<int> b)
     deque<int> ans = {0};
     for(int i = la - 1;i>=0;i--)
     {   deque<int> sum;
+        c = 0;
         for(int j = lb - 1;j>=0;j--)
         {
             vector<int> v = mult(a[i],b[j],c);
