@@ -351,8 +351,8 @@ int main(void)
     //deque<int> b = input();
     //display(a);
     //display(b);
-    if(is_prime(a)) cout<<"Prime";
-    else cout<<"not Prime";
+    if(is_prime(a)) cout<<"Prime"<<"\n";
+    else cout<<"not Prime"<<"\n";
     }
     return 0;
 
