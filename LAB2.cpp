@@ -63,7 +63,7 @@ void Del(int x,int y)
         DelFirst();
         return;
     }
-    temp = temp->next;
+    if(temp->next!=NULL) temp = temp->next;
     while(temp->next!=NULL)
     {
         if(temp->x==x&&temp->y==y)
