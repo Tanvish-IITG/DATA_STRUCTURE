@@ -60,7 +60,13 @@ vector<string> parse_string(string s)
     string number = "";
     for(int j = 0;j < l;j++)
     {   
-        if(s[j]=='+'||s[j]=='-'||s[j]=='*'||s[j]=='/'||s[j]=='('||s[j]==')'||s[j]=='^')
+        if(s[j]=='+'||
+        (s[j]=='-'&& (j!=0&&(s[j-1]<='9'&&s[j-1]>='0') ))||
+        s[j]=='*'||
+        s[j]=='/'||
+        s[j]=='('||
+        s[j]==')'||
+        s[j]=='^')
         {   
             arr.push_back(number);  
             number = "";
@@ -100,7 +106,7 @@ node * built_tree(vector<string> s)
     int l = s.size();
     for(int i = 0;i<l;i++)
     {
-        if(s[i][0]<='9'&&s[i][0]>='0')
+        if((s[i][0]<='9'&&s[i][0]>='0')||(s.size()>1&&(s[i][0]=='-')&&s[i][1]<='9'&&s[i][1]>='0'))
         {
             node *ptr = new node;
             ptr->data = s[i];
@@ -165,7 +171,7 @@ bool isOperator(string s)
 
 bool isOperant(string s)
 {
-    if(s[0]<='9'&&s[0]>='0')  return true;
+    if((s[0]<='9'&&s[0]>='0')||((s[0]=='-')&&(s.size()>1)&&s[1]<='9'&&s[1]<='0'))  return true;
     else return false;
 }
 
@@ -289,12 +295,14 @@ int main(void)
             cin>>s;
             vector<string> output = parse_string(s);
             indicator = 0;
+            
             vector<string> output2 = intToPost(output);
             if(indicator == 1) 
             {
                 cout<<"CANT BE EVALUTED\n";
                 continue;
             }
+            
             node* root = built_tree(output2);
             cout<<eval(root)<<"\n";
         }
