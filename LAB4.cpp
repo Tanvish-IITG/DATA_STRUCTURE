@@ -171,7 +171,7 @@ bool isOperator(string s)
 
 bool isOperant(string s)
 {
-    if((s[0]<='9'&&s[0]>='0')||((s[0]=='-')&&(s.size()>1)&&s[1]<='9'&&s[1]<='0'))  return true;
+    if((s[0]<='9'&&s[0]>='0')||((s[0]=='-')&&(s.size()>1)&&s[1]<='9'&&s[1]>='0'))  return true;
     else return false;
 }
 
