@@ -370,6 +370,13 @@ node * built_tree(vector<string> s)
             ptr->right = NULL;
             ptr->left = NULL;
             ptr->parent = NULL;
+            if(st.size()<2) 
+            {
+                
+                indicator = 1;
+                return NULL ;
+
+            }
             node *ptr1 = st.top();
             st.pop();
             node *ptr2 = st.top();
@@ -378,6 +385,11 @@ node * built_tree(vector<string> s)
             st.push(ptr);
         }
         
+    }
+    if(st.empty())
+    {
+        indicator = 1;
+        return NULL;
     }
     return st.top();
 }
@@ -563,8 +575,10 @@ void parse_assignment_statement(RBTree &memory,string input)
     {   
         int ans;
         node* root = built_tree(output_2);
-        ans = eval(root);
-        memory.insert(variable,to_string(ans));
+        if(root!=NULL)
+        {    ans = eval(root);
+             memory.insert(variable,to_string(ans));
+        }
         return;
     }
     return ;
@@ -607,8 +621,13 @@ int main(void)
                 cout<<"CANT BE EVALUTED\n";
                 continue;
             }
-            
+            indicator = 0;
             node* root = built_tree(output2);
+            if(indicator == 1) 
+            {
+                cout<<"CANT BE EVALUTED\n";
+                continue;
+            }
             cout<<eval(root)<<"\n";
             
         }
@@ -618,5 +637,4 @@ int main(void)
     }
     return 0;
 }
-
 
