@@ -33,11 +33,10 @@ int binary_search(vector<pair<int,int>> v,int l,int r,int n)
 
 int main()
 {
-    int no_test_cases;
-    cin>>no_test_cases;
-    int arr[no_test_cases][3];
     int n;
-    cin>>n;
+    int no_test_cases;
+    cin>>no_test_cases>>n;
+    int arr[no_test_cases][3];
     vector<pair<int,int>> memory;
     int c;
     int user_id;
