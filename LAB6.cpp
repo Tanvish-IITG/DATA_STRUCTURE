@@ -77,7 +77,7 @@ int main()
             if(memory[x].second > max)
             {
                 max = memory[x].second;
-                winner = x;
+                winner = memory[x].first;
             }
         }
         else if(arr[i][0]==2)
