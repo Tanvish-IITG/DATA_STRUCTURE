@@ -115,7 +115,7 @@ int main(void)
 
     for(int i = 0;i<l;i++)
     {
-        if(output[i].x < min_x)
+        if(output[i].x < min_x || output[i].x==min_x && output[i].y < output[min].y)
         {
             min_x = output[i].x;
             pos = i;
