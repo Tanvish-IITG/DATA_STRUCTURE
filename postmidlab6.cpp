@@ -21,6 +21,7 @@ int fun(char a)
     {
         return a-'A'+26;
     }
+    return 0;
 }
 int hashing_function(string s,int n)
 {
@@ -177,6 +178,7 @@ int main()
     int n;
     cin>>n;
     HashingTable H(n);
+    randomize_rand();
     for(int i = 0;i<n;i++)
     {
         string s;
